@@ -3,6 +3,7 @@
         "prettier": "^3.9.6"
     },
     "scripts": {
-        "format": "prettier . --write"
+        "format": "cargo fmt && prettier . --write",
+        "refresh": "cargo clean && pnpm clean && cargo update && pnpm update && pnpm format && cargo check"
     }
 }

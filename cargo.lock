@@ -3,5 +3,5 @@
 version = 4
 
 [[package]]
-name = "lets-build-a-compiler"
+name = "cradle"
 version = "0.0.0"

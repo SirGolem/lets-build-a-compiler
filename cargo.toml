@@ -1,7 +1,3 @@
-[[bin]]
-name = "compiler"
-path = "source/main.rs"
-
-[package]
-edition = "2024"
-name = "lets-build-a-compiler"
+[workspace]
+members = ["cradle"]
+resolver = "3"
