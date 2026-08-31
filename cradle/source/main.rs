@@ -1,8 +1,4 @@
-use crate::{
-    input::get_character,
-    output::{abort, emit},
-    state::State,
-};
+use crate::{input::get_character, output::abort, state::State};
 use std::fs::File;
 
 mod input;
