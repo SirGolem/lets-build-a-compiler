@@ -4,7 +4,7 @@ use crate::{
     state::State,
 };
 
-pub fn parse_identifier(state: &mut State) -> char {
+pub fn identifier(state: &mut State) -> char {
     match state.character {
         | None => expected("an identifier", "end of file"),
         | Some(character) if is_alphabetic(character) => {
@@ -15,7 +15,7 @@ pub fn parse_identifier(state: &mut State) -> char {
     };
 }
 
-pub fn parse_integer_literal(state: &mut State) -> char {
+pub fn integer_literal(state: &mut State) -> char {
     match state.character {
         | None => expected("an integer literal", "end of file"),
         | Some(character) if is_numeric(character) => {
