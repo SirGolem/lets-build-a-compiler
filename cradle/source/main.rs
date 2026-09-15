@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 use crate::{input::get_character, output::abort, state::State};
 use std::fs::File;
 
