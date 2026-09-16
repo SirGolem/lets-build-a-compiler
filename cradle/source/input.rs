@@ -19,17 +19,23 @@ pub fn get_character(state: &mut State) -> () {
     }
 }
 
-pub fn is_alphabetic(character: char) -> bool {
-    (character >= 'A' && character <= 'Z') || (character >= 'a' && character <= 'z')
+pub fn is_alphabetic<Character: Into<Option<char>>>(character: Character) -> bool {
+    let character = character.into();
+    if let Some(character) = character {
+        (character >= 'A' && character <= 'Z') || (character >= 'a' && character <= 'z')
+    } else {
+        false
+    }
 }
 
-pub fn is_numeric(character: char) -> bool {
-    character >= '0' && character <= '9'
+pub fn is_numeric<Character: Into<Option<char>>>(character: Character) -> bool {
+    let character = character.into();
+    if let Some(character) = character { character >= '0' && character <= '9' } else { false }
 }
 
 pub fn match_character(character: char, state: &mut State) -> () {
     match (character, state.character) {
-        | (_, None) => expected(format!("'{character}'"), "end of file"),
+        | (_, None) => expected(format!("'{character}'"), "end of input"),
         | (expected, Some(found)) if expected == found => get_character(state),
         | (expected, Some(found)) => crate::output::expected(format!("'{expected}'"), format!("'{found}'")),
     };
