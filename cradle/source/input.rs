@@ -4,6 +4,14 @@ use crate::{
 };
 use std::io::{Read, stdin};
 
+pub fn check_character(character: char, state: &mut State) -> bool {
+    match (character, state.character) {
+        | (_, None) => false,
+        | (expected, Some(found)) if expected == found => true,
+        | (_, Some(_)) => false,
+    }
+}
+
 pub fn get_character(state: &mut State) -> () {
     let mut reader: Box<dyn Read> = match &state.input_file {
         | None => Box::new(stdin()),
