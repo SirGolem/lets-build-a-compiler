@@ -33,7 +33,7 @@ pub fn expression(state: &mut State) -> () {
             | Some('+') => addition(state),
             | Some('-') => subtraction(state),
             | Some(character) => expected("an additive operator", format!("'{character}'")),
-        }
+        };
     }
 }
 
@@ -44,7 +44,7 @@ pub fn factor(state: &mut State) -> () {
         match_character(')', state);
     } else {
         emit(format!("MOVE R0, #{}", integer_literal(state)), state);
-    }
+    };
 }
 
 pub fn integer_literal(state: &mut State) -> char {
@@ -83,6 +83,6 @@ pub fn term(state: &mut State) -> () {
             | Some('/') => division(state),
             | Some('*') => multiplication(state),
             | Some(character) => expected("a multiplicative operator", format!("'{character}'")),
-        }
+        };
     }
 }

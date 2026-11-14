@@ -17,7 +17,7 @@ pub fn emit(instruction: impl Into<String>, state: &State) -> () {
 
     if let Err(error) = writer.write((instruction.into() + "\n").as_bytes()) {
         abort(format!("Failed to emit instruction: {error}"));
-    }
+    };
 }
 
 pub fn error(message: impl Into<String>) -> () {

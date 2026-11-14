@@ -24,7 +24,7 @@ pub fn get_character(state: &mut State) -> () {
         | Ok(0) => state.character = None,
         | Ok(1) => state.character = Some(character[0] as char),
         | Ok(_) => abort("Failed to read character: too many bytes."),
-    }
+    };
 }
 
 pub fn is_additive_operator<Character: Into<Option<char>>>(character: Character) -> bool {
