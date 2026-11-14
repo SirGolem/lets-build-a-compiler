@@ -27,6 +27,11 @@ pub fn get_character(state: &mut State) -> () {
     };
 }
 
+pub fn is_additive_operator<Character: Into<Option<char>>>(character: Character) -> bool {
+    let character = character.into();
+    if let Some(character) = character { character == '+' || character == '-' } else { false }
+}
+
 pub fn is_alphabetic<Character: Into<Option<char>>>(character: Character) -> bool {
     let character = character.into();
     if let Some(character) = character {
