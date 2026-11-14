@@ -30,7 +30,11 @@ fn main() -> () {
         },
     };
 
-    let mut state = State { character: None, input_file, output_file };
+    let mut state = State {
+        character: None,
+        input_file,
+        output_file,
+    };
     get_character(&mut state);
 
     expression(&mut state);
