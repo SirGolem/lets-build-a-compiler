@@ -41,6 +41,11 @@ pub fn is_alphabetic<Character: Into<Option<char>>>(character: Character) -> boo
     }
 }
 
+pub fn is_alphanumeric<Character: Into<Option<char>>>(character: Character) -> bool {
+    let character = character.into();
+    is_alphabetic(character) || is_numeric(character)
+}
+
 pub fn is_numeric<Character: Into<Option<char>>>(character: Character) -> bool {
     let character = character.into();
     if let Some(character) = character { character >= '0' && character <= '9' } else { false }
