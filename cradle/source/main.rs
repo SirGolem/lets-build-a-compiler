@@ -1,4 +1,5 @@
 #![allow(unused)]
+#![warn(unused_imports)]
 
 use crate::{output::abort, state::State};
 use std::fs::File;
