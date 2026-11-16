@@ -1,13 +1,13 @@
 #![allow(unused)]
 #![warn(unused_imports)]
 
-use crate::{output::abort, state::State};
-use std::fs::File;
-
 mod input;
 mod output;
 mod parse;
 mod state;
+
+use crate::{output::abort, state::State};
+use std::fs::File;
 
 const INPUT_FILE_PREFIX: &str = "--input-file=";
 const OUTPUT_FILE_PREFIX: &str = "--output-file=";
